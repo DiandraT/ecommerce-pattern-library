@@ -1,0 +1,13 @@
+:root {
+  --color-primary: #fff;
+  --color-secondary: #000;
+  --color-accent: #2a423c;
+  --color-type: #000;
+  --color-section: #d3d3d3;
+
+  --font-primary: "Heebo", sans-serif;
+}
+
+html {
+  font-family: var(--font-primary);
+}
