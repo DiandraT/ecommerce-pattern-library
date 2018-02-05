@@ -10,10 +10,10 @@ fonts:
 colors:
   primary: |
     The primary colour (black) will be used for all type.
-  secondary: |
+  accent: |
       The secondary colour (teal) will be used as an accent colour for emphasis, and certain components (e.g. buttons, navigation bar, links)
-  section: |
-    The colour grey will be used to divide some sections.
+
+      The colour grey will be used to divide some sections.
 
 
 ---
