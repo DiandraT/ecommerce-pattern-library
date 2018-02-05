@@ -15,6 +15,5 @@ colors:
 
       The colour grey will be used to divide some sections.
 
-
 ---
 Timepiece is an e-commerce website that will focus on handmade/vintage timepieces, such as: clocks, watches (wrist & pocket), etc. 
