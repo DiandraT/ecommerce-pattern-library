@@ -7,7 +7,7 @@
 
 .btn-light {
   background-color: var(--color-accent-light);
-  border-color: var(--color-accent);
+  border-color: var(--color-accent-light);
 
   color: #fff;
 }
