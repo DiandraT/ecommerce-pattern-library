@@ -1,0 +1,20 @@
+.btn {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+
+  color: #fff;
+}
+
+.btn-light {
+  background-color: var(--color-accent-light);
+  border-color: var(--color-accent);
+
+  color: #fff;
+}
+
+.btn-ghost {
+  background-color: transparent;
+  border-color: var(--color-accent);
+
+  color: var(--color-accent);
+}

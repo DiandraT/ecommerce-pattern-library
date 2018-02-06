@@ -1,6 +1,7 @@
 :root {
   --color-primary: #000;
   --color-accent: #2a423c;
+  --color-accent-light: #466e64;
   --color-section: #d3d3d3;
   --font-primary: "Heebo", sans-serif;
 }
