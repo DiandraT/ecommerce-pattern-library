@@ -1,0 +1,36 @@
+/** BASIC CARDS **/
+
+.basic-card {
+  background-color: var(--color-accent);
+  color: #fff;
+}
+
+/** PRODUCT INFO CARDS **/
+
+.image-card {
+  text-decoration: none;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  list-style-type: none;
+  color: #000;
+}
+
+/** IMAGE CARDS **/
+
+.image-container {
+  position: relative;
+  text-align: center;
+  color: #fff;
+}
+
+.centered-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgb(204, 204, 204);
+  background: rgba(204, 204, 204, 0.5);
+}

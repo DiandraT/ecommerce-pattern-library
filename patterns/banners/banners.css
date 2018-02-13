@@ -1,0 +1,28 @@
+/** TOP BANNER **/
+
+.top-content {
+  position: relative;
+  background-image: url("../../images/top-banner-image.jpg");
+
+  color: #000;
+  background-size: cover;
+}
+
+/** CALL TO ACTION BANNER **/
+
+.action-banner {
+  position: relative;
+  background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url("../../images/action-banner-image.jpg");
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 16em;
+}
+
+.action-content {
+  color: #fff;
+}
+
+.word-color {
+  color: var(--color-accent-light)
+}

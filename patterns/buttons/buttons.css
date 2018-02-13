@@ -1,13 +1,23 @@
 .btn {
   background-color: var(--color-accent);
   border-color: var(--color-accent);
+  border-width: 1px;
+  border-radius: 0px;
 
   color: #fff;
+
+  transition: background-color .30s;
+}
+
+.btn:hover {
+  background-color: #182623;
 }
 
 .btn-light {
   background-color: var(--color-accent-light);
   border-color: var(--color-accent-light);
+  border-width: 1px;
+  border-radius: 0px;
 
   color: #fff;
 }
@@ -15,6 +25,20 @@
 .btn-ghost {
   background-color: transparent;
   border-color: var(--color-accent);
+  border-width: 1px;
+  border-radius: 0px;
 
   color: var(--color-accent);
+}
+
+.btn-ghost:hover {
+  color: #fff;
+  border-color: #182623;
+}
+
+.btn-small {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+
+  color: #fff;
 }
