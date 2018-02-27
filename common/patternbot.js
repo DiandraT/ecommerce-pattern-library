@@ -348,9 +348,9 @@ const patternBotIncludes = function (manifest) {
 /** 
  * Patternbot library manifest
  * /Users/diandra/Desktop/ecommerce-pattern-library
- * @version 1519755761420
+ * @version 1519756788556
  */
-const patternManifest_1519755761420 = {
+const patternManifest_1519756788556 = {
   "commonInfo": {
     "modulifier": [
       "responsive",
@@ -723,5 +723,5 @@ const patternManifest_1519755761420 = {
   }
 };
 
-patternBotIncludes(patternManifest_1519755761420);
+patternBotIncludes(patternManifest_1519756788556);
 }());
