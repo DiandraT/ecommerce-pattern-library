@@ -1,0 +1,20 @@
+input,
+select {
+  border-radius: .15em;
+  border: 2px solid;
+  border-color: var(--color-accent);
+  outline: none;
+}
+
+input[type="checkbox"] + label::before {
+  border-radius: .15em;
+  border-color: var(--color-accent);
+}
+
+input[type="radio"] + label::before {
+  border-color: var(--color-accent);
+}
+
+textarea {
+  border-color: var(--color-accent);
+}

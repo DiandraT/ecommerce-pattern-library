@@ -348,9 +348,9 @@ const patternBotIncludes = function (manifest) {
 /** 
  * Patternbot library manifest
  * /Users/diandra/Desktop/ecommerce-pattern-library
- * @version 1519751565600
+ * @version 1519755761420
  */
-const patternManifest_1519751565600 = {
+const patternManifest_1519755761420 = {
   "commonInfo": {
     "modulifier": [
       "responsive",
@@ -650,14 +650,57 @@ const patternManifest_1519751565600 = {
       "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/forms",
       "html": [
         {
-          "name": "forms",
-          "namePretty": "Forms",
-          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/forms/forms.html",
-          "localPath": "patterns/forms/forms.html"
+          "name": "buttons-radio",
+          "namePretty": "Buttons radio",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/forms/buttons-radio.html",
+          "localPath": "patterns/forms/buttons-radio.html",
+          "readme": {}
+        },
+        {
+          "name": "checkbox",
+          "namePretty": "Checkbox",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/forms/checkbox.html",
+          "localPath": "patterns/forms/checkbox.html",
+          "readme": {}
+        },
+        {
+          "name": "dropdown-fields",
+          "namePretty": "Dropdown fields",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/forms/dropdown-fields.html",
+          "localPath": "patterns/forms/dropdown-fields.html",
+          "readme": {}
+        },
+        {
+          "name": "input-fields",
+          "namePretty": "Input fields",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/forms/input-fields.html",
+          "localPath": "patterns/forms/input-fields.html",
+          "readme": {}
+        },
+        {
+          "name": "textbox-fields",
+          "namePretty": "Textbox fields",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/forms/textbox-fields.html",
+          "localPath": "patterns/forms/textbox-fields.html",
+          "readme": {}
         }
       ],
-      "md": [],
-      "css": []
+      "md": [
+        {
+          "name": "readme",
+          "namePretty": "Readme",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/forms/README.md",
+          "localPath": "patterns/forms/README.md"
+        }
+      ],
+      "css": [
+        {
+          "name": "forms",
+          "namePretty": "Forms",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/forms/forms.css",
+          "localPath": "patterns/forms/forms.css"
+        }
+      ]
     }
   ],
   "config": {
@@ -680,5 +723,5 @@ const patternManifest_1519751565600 = {
   }
 };
 
-patternBotIncludes(patternManifest_1519751565600);
+patternBotIncludes(patternManifest_1519755761420);
 }());

@@ -9,3 +9,14 @@
 html {
   font-family: var(--font-primary);
 }
+
+a {
+  text-decoration: none;
+  list-style-type: none;
+  color: var(--color-accent);
+}
+
+mark {
+  background-color: var(--color-accent);
+  color: #fff;
+}
