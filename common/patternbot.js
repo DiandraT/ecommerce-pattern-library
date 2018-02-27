@@ -348,9 +348,9 @@ const patternBotIncludes = function (manifest) {
 /** 
  * Patternbot library manifest
  * /Users/diandra/Desktop/ecommerce-pattern-library
- * @version 1519751071197
+ * @version 1519751565600
  */
-const patternManifest_1519751071196 = {
+const patternManifest_1519751565600 = {
   "commonInfo": {
     "modulifier": [
       "responsive",
@@ -537,7 +537,8 @@ const patternManifest_1519751071196 = {
     "patterns": [
       "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/banners",
       "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/buttons",
-      "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/cards"
+      "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/cards",
+      "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/forms"
     ],
     "pages": []
   },
@@ -642,6 +643,21 @@ const patternManifest_1519751071196 = {
           "localPath": "patterns/cards/cards.css"
         }
       ]
+    },
+    {
+      "name": "forms",
+      "namePretty": "Forms",
+      "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/forms",
+      "html": [
+        {
+          "name": "forms",
+          "namePretty": "Forms",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/forms/forms.html",
+          "localPath": "patterns/forms/forms.html"
+        }
+      ],
+      "md": [],
+      "css": []
     }
   ],
   "config": {
@@ -664,5 +680,5 @@ const patternManifest_1519751071196 = {
   }
 };
 
-patternBotIncludes(patternManifest_1519751071196);
+patternBotIncludes(patternManifest_1519751565600);
 }());
