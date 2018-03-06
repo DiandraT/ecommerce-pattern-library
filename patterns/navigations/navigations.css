@@ -1,0 +1,117 @@
+header nav li {
+  display: inline;
+  width: 100%;
+  padding: 1.5em;
+}
+
+header nav li a {
+  text-decoration: none;
+  color: var(--color-primary);
+  margin-right: 0;
+  text-align: center;
+}
+
+header nav li a:hover {
+  outline: none;
+  border-bottom: 2px solid #2a423c;
+  padding-bottom: 3px;
+  color: #2a423c;
+
+  transition: .5s ease;
+}
+
+.logo {
+  margin: 0 auto;
+  outline: none;
+}
+
+.logo img {
+  max-width: 150px;
+  min-width: 50px;
+}
+
+/** PAGINATION **/
+
+.btn {
+  color: #000;
+  background-color: #fff;
+  display: inline-block;
+  border: 0px;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .2s;
+  margin: 0 4px;
+}
+
+.btn:focus {
+  background-color: #2a423c;
+  color: #fff;
+}
+
+.btn:hover {
+  background-color: #2a423c;
+  color: #fff;
+  outline: none;
+
+  transition: 1s ease;
+}
+
+.button-selected {
+  color: red;
+}
+
+/** NAVIGATION BUTTONS **/
+
+.read-more {
+  color: #000;
+}
+
+.show-hide {
+  display: block;
+  outline: none;
+}
+
+.button1,
+.button2 {
+  background-color: #2a423c;
+  border: #2a423c;
+  color: #fff;
+}
+
+.button1:hover,
+.button2:hover {
+  transition: 1s ease;
+}
+
+.button2:focus ~ .alert {
+  display: block;
+}
+
+.button1:focus ~ .alert {
+  display: none;
+}
+
+.button:hover {
+
+}
+
+@media only screen and (min-width: 25em) {
+
+  header nav {
+    padding-top: 3em;
+  }
+
+}
+
+@media only screen and (min-width: 38em) {
+
+  header nav {
+    text-align: right;
+  }
+
+  .logo {
+    text-align: left;
+  }
+
+}

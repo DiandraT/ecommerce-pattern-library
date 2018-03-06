@@ -1,0 +1,28 @@
+img {
+  max-width: 100%;
+  vertical-align: top;
+}
+
+body {
+  overflow: hidden;
+}
+
+section {
+  margin: 0 auto;
+  background-color: #d3d3d3;
+  position: relative;
+  padding: 10px;
+}
+
+.alternate2 {
+  height: 200px;
+  width: 1000px;
+  margin: 0 auto;
+  background-color: #466e64;
+  position: relative;
+  padding: 10px;
+}
+
+.content2 {
+  color: #fff;
+}

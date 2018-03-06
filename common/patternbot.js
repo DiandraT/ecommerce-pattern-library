@@ -348,9 +348,9 @@ const patternBotIncludes = function (manifest) {
 /** 
  * Patternbot library manifest
  * /Users/diandra/Desktop/ecommerce-pattern-library
- * @version 1519756788556
+ * @version 1520353496545
  */
-const patternManifest_1519756788556 = {
+const patternManifest_1520353496545 = {
   "commonInfo": {
     "modulifier": [
       "responsive",
@@ -538,7 +538,9 @@ const patternManifest_1519756788556 = {
       "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/banners",
       "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/buttons",
       "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/cards",
-      "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/forms"
+      "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/forms",
+      "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/navigations",
+      "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/sections"
     ],
     "pages": []
   },
@@ -701,6 +703,79 @@ const patternManifest_1519756788556 = {
           "localPath": "patterns/forms/forms.css"
         }
       ]
+    },
+    {
+      "name": "navigations",
+      "namePretty": "Navigations",
+      "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/navigations",
+      "html": [
+        {
+          "name": "navigation-bar",
+          "namePretty": "Navigation bar",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/navigations/navigation-bar.html",
+          "localPath": "patterns/navigations/navigation-bar.html",
+          "readme": {}
+        },
+        {
+          "name": "navigation-buttons",
+          "namePretty": "Navigation buttons",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/navigations/navigation-buttons.html",
+          "localPath": "patterns/navigations/navigation-buttons.html",
+          "readme": {}
+        },
+        {
+          "name": "pagination",
+          "namePretty": "Pagination",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/navigations/pagination.html",
+          "localPath": "patterns/navigations/pagination.html",
+          "readme": {}
+        }
+      ],
+      "md": [
+        {
+          "name": "readme",
+          "namePretty": "Readme",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/navigations/README.md",
+          "localPath": "patterns/navigations/README.md"
+        }
+      ],
+      "css": [
+        {
+          "name": "navigations",
+          "namePretty": "Navigations",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/navigations/navigations.css",
+          "localPath": "patterns/navigations/navigations.css"
+        }
+      ]
+    },
+    {
+      "name": "sections",
+      "namePretty": "Sections",
+      "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/sections",
+      "html": [
+        {
+          "name": "sections",
+          "namePretty": "Sections",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/sections/sections.html",
+          "localPath": "patterns/sections/sections.html"
+        }
+      ],
+      "md": [
+        {
+          "name": "readme",
+          "namePretty": "Readme",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/sections/README.md",
+          "localPath": "patterns/sections/README.md"
+        }
+      ],
+      "css": [
+        {
+          "name": "sections",
+          "namePretty": "Sections",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/sections/sections.css",
+          "localPath": "patterns/sections/sections.css"
+        }
+      ]
     }
   ],
   "config": {
@@ -723,5 +798,5 @@ const patternManifest_1519756788556 = {
   }
 };
 
-patternBotIncludes(patternManifest_1519756788556);
+patternBotIncludes(patternManifest_1520353496545);
 }());
