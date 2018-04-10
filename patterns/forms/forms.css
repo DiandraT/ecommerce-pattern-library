@@ -18,3 +18,29 @@ input[type="radio"] + label::before {
 textarea {
   border-color: var(--color-accent);
 }
+
+input, select {
+  border: none;
+  appearance: none;
+  outline: none;
+  border-bottom: 1.5px solid #000;
+}
+
+select {
+  border: none;
+  width: 30%;
+  float: right;
+}
+
+/*ERROR MESSAGE*/
+
+input:invalid,
+input[type="checkbox"]:invalid + label::before {
+  border-color: f33;
+}
+
+.error-message {
+  display: none;
+  background-color: #fee;
+  color: #c33
+}

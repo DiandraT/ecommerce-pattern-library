@@ -16,13 +16,23 @@
 
   background-size: cover;
   background-repeat: no-repeat;
-  height: 16em;
+  background-position: 70%;
 }
 
 .action-content {
+  width: 100%;
+  padding: 160px 0;
+  margin-bottom: .5em;
+}
+
+.banner-wrapper {
   color: #fff;
 }
 
 .word-color {
-  color: var(--color-accent-light)
+  color: var(--color-accent-light);
+}
+
+.content {
+  color: #fff;
 }

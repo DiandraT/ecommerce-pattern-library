@@ -3,10 +3,6 @@ img {
   vertical-align: top;
 }
 
-body {
-  overflow: hidden;
-}
-
 section {
   margin: 0 auto;
   background-color: #d3d3d3;
@@ -16,7 +12,7 @@ section {
 
 .alternate2 {
   height: 200px;
-  width: 1000px;
+  width: 100%;
   margin: 0 auto;
   background-color: #466e64;
   position: relative;

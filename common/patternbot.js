@@ -86,11 +86,17 @@ const patternBotIncludes = function (manifest) {
     `},
   };
 
+  let jsFileQueue = {
+    sync: [],
+    async: [],
+  };
   let downloadedAssets = {};
 
   const downloadHandler = function (e) {
+    const id = (e.target.hasAttribute('src')) ? e.target.getAttribute('src') : e.target.getAttribute('href');
+
     e.target.removeEventListener('load', downloadHandler);
-    downloadedAssets[e.target.getAttribute('href')] = true;
+    downloadedAssets[id] = true;
   };
 
   const findRootPath = function () {
@@ -101,7 +107,6 @@ const patternBotIncludes = function (manifest) {
     for (i = 0; i < t; i++) {
       if (rootMatcher.test(allScripts[i].src)) {
         return allScripts[i].src.split(rootMatcher)[0];
-        break;
       }
     }
   };
@@ -116,7 +121,7 @@ const patternBotIncludes = function (manifest) {
     newLink.addEventListener('load', downloadHandler);
 
     document.head.appendChild(newLink);
-  }
+  };
 
   const bindAllCssFiles = function (rootPath) {
     if (manifest.commonInfo && manifest.commonInfo.readme && manifest.commonInfo.readme.attributes &&  manifest.commonInfo.readme.attributes.fontUrl) {
@@ -139,11 +144,59 @@ const patternBotIncludes = function (manifest) {
     });
   };
 
+  const queueAllJsFiles = function (rootPath) {
+    if (manifest.patternLibFiles && manifest.patternLibFiles.js) {
+      manifest.patternLibFiles.js.forEach((js) => {
+        const href = `..${manifest.config.commonFolder}/${js.filename}`;
+
+        downloadedAssets[href] = false;
+        jsFileQueue.sync.push(href);
+      });
+    }
+
+    manifest.userPatterns.forEach((pattern) => {
+      if (!pattern.js) return;
+
+      pattern.js.forEach((js) => {
+        const href = `../${js.localPath}`;
+
+        downloadedAssets[href] = false;
+        jsFileQueue.async.push(href);
+      });
+    });
+  };
+
+  const addJsFile = function (href) {
+    const newScript = document.createElement('script');
+
+    newScript.setAttribute('src', href);
+    document.body.appendChild(newScript);
+
+    return newScript;
+  };
+
+  const bindNextJsFile = function (e) {
+    if (e && e.target) {
+      e.target.removeEventListener('load', bindNextJsFile);
+      downloadedAssets[e.target.getAttribute('src')] = true;
+    }
+
+    if (jsFileQueue.sync.length > 0) {
+      const scriptTag = addJsFile(jsFileQueue.sync.shift());
+      scriptTag.addEventListener('load', bindNextJsFile);
+    } else {
+      jsFileQueue.async.forEach((js) => {
+        const scriptTag = addJsFile(js);
+        scriptTag.addEventListener('load', downloadHandler);
+      });
+    }
+  };
+
   const getPatternInfo = function (patternElem) {
     let patternInfoJson;
     const data = patternElem.innerText.trim();
 
-    if (!data) return {}
+    if (!data) return {};
 
     try {
       patternInfoJson = JSON.parse(data);
@@ -172,9 +225,50 @@ const patternBotIncludes = function (manifest) {
     };
   };
 
+  const correctHrefPaths = function (html) {
+    const hrefSearch = /href\s*=\s*"\.\.\/\.\.\//g;
+    const srcSearch = /src\s*=\s*"\.\.\/\.\.\//g;
+    const urlSearch = /url\((["']*)\.\.\/\.\.\//g;
+
+    return html
+      .replace(hrefSearch, 'href="../')
+      .replace(srcSearch, 'src="../')
+      .replace(urlSearch, 'url($1../')
+    ;
+  };
+
+  const buildAccurateSelectorFromElem = function (elem) {
+    let theSelector = elem.tagName.toLowerCase();
+
+    if (elem.id) theSelector += `#${elem.id}`;
+    if (elem.getAttribute('role')) theSelector += `[role="${elem.getAttribute('role')}"]`;
+    if (elem.classList.length > 0) theSelector += `.${[].join.call(elem.classList, '.')}`;
+
+    theSelector += ':first-of-type';
+
+    return theSelector;
+  };
+
+  /**
+   * This is an ugly mess: Blink does not properly render SVGs when using DOMParser alone.
+   * But, I need DOMParser to determine the correct element to extract.
+   *
+   * I only want to get the first element within the `<body>` tag of the loaded document.
+   * This dumps the whole, messy, HTML document into a temporary `<div>`,
+   * then uses the DOMParser version, of the same element, to create an accurate selector,
+   * then finds that single element in the temporary `<div>` using the selector and returns it.
+   */
   const htmlStringToElem = function (html) {
+    let theSelector = '';
+    const tmpDoc = document.createElement('div');
+    const finalTmpDoc = document.createElement('div');
     const doc = (new DOMParser()).parseFromString(html, 'text/html');
-    return doc.body;
+
+    tmpDoc.innerHTML = html;
+    theSelector = buildAccurateSelectorFromElem(doc.body.firstElementChild);
+    finalTmpDoc.appendChild(tmpDoc.querySelector(theSelector));
+
+    return finalTmpDoc;
   };
 
   const replaceElementValue = function (elem, sel, data) {
@@ -197,7 +291,7 @@ const patternBotIncludes = function (manifest) {
 
     if (!patternDetails.html) return;
 
-    patternOutElem = htmlStringToElem(patternDetails.html);
+    patternOutElem = htmlStringToElem(correctHrefPaths(patternDetails.html));
     patternData = getPatternInfo(patternElem);
 
     Object.keys(patternData).forEach((sel) => {
@@ -234,7 +328,7 @@ const patternBotIncludes = function (manifest) {
   };
 
   const hideLoadingScreen = function () {
-    const allDownloadedInterval = setInterval(() => {
+    let allDownloadedInterval = setInterval(() => {
       if (Object.values(downloadedAssets).includes(false)) return;
 
       clearInterval(allDownloadedInterval);
@@ -272,7 +366,7 @@ const patternBotIncludes = function (manifest) {
           if (resp.status >= 200 && resp.status <= 299) {
             return resp.text();
           } else {
-            console.group('Cannot location pattern');
+            console.group('Cannot locate pattern');
             console.log(resp.url);
             console.log(`Error ${resp.status}: ${resp.statusText}`);
             console.groupEnd();
@@ -328,11 +422,13 @@ const patternBotIncludes = function (manifest) {
 
     rootPath = findRootPath();
     bindAllCssFiles(rootPath);
+    queueAllJsFiles(rootPath);
     allPatternTags = findAllPatternTags();
     allPatterns = constructAllPatterns(rootPath, allPatternTags);
 
     loadAllPatterns(allPatterns).then((allLoadedPatterns) => {
       renderAllPatterns(allPatternTags, allLoadedPatterns);
+      bindNextJsFile();
       hideLoadingScreen();
     }).catch((e) => {
       console.group('Pattern load error');
@@ -348,9 +444,9 @@ const patternBotIncludes = function (manifest) {
 /** 
  * Patternbot library manifest
  * /Users/diandra/Desktop/ecommerce-pattern-library
- * @version 1520353496545
+ * @version 6af408d6c60d9f7f56214bddfa4f3b862caae359
  */
-const patternManifest_1520353496545 = {
+const patternManifest_6af408d6c60d9f7f56214bddfa4f3b862caae359 = {
   "commonInfo": {
     "modulifier": [
       "responsive",
@@ -496,7 +592,9 @@ const patternManifest_1520353496545 = {
           "primary": 0,
           "opposite": 255
         }
-      }
+      },
+      "bodyRaw": "Timepiece is an e-commerce website that will focus on handmade/vintage timepieces, such as: clocks, watches (wrist & pocket), etc.\n",
+      "bodyBasic": "Timepiece is an e-commerce website that will focus on handmade/vintage timepieces, such as: clocks, watches (wrist & pocket), etc."
     },
     "icons": [
       "1-checkmark",
@@ -538,11 +636,30 @@ const patternManifest_1520353496545 = {
       "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/banners",
       "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/buttons",
       "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/cards",
+      "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/footer",
       "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/forms",
+      "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/header",
       "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/navigations",
       "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/sections"
     ],
-    "pages": []
+    "pages": [
+      {
+        "name": "checkout.html",
+        "namePretty": "Checkout",
+        "path": "/Users/diandra/Desktop/ecommerce-pattern-library/pages/checkout.html"
+      },
+      {
+        "name": "home.html",
+        "namePretty": "Home",
+        "path": "/Users/diandra/Desktop/ecommerce-pattern-library/pages/home.html"
+      },
+      {
+        "name": "product-list.html",
+        "namePretty": "Product list",
+        "path": "/Users/diandra/Desktop/ecommerce-pattern-library/pages/product-list.html"
+      }
+    ],
+    "js": []
   },
   "userPatterns": [
     {
@@ -553,12 +670,14 @@ const patternManifest_1520353496545 = {
         {
           "name": "call-to-action-banner",
           "namePretty": "Call to action banner",
+          "filename": "call-to-action-banner",
           "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/banners/call-to-action-banner.html",
           "localPath": "patterns/banners/call-to-action-banner.html"
         },
         {
           "name": "top-banner",
           "namePretty": "Top banner",
+          "filename": "top-banner",
           "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/banners/top-banner.html",
           "localPath": "patterns/banners/top-banner.html"
         }
@@ -568,10 +687,12 @@ const patternManifest_1520353496545 = {
         {
           "name": "banners",
           "namePretty": "Banners",
+          "filename": "banners",
           "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/banners/banners.css",
           "localPath": "patterns/banners/banners.css"
         }
-      ]
+      ],
+      "js": []
     },
     {
       "name": "buttons",
@@ -581,6 +702,7 @@ const patternManifest_1520353496545 = {
         {
           "name": "buttons",
           "namePretty": "Buttons",
+          "filename": "buttons",
           "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/buttons/buttons.html",
           "localPath": "patterns/buttons/buttons.html"
         }
@@ -589,6 +711,7 @@ const patternManifest_1520353496545 = {
         {
           "name": "readme",
           "namePretty": "Readme",
+          "filename": "README",
           "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/buttons/README.md",
           "localPath": "patterns/buttons/README.md"
         }
@@ -597,10 +720,12 @@ const patternManifest_1520353496545 = {
         {
           "name": "buttons",
           "namePretty": "Buttons",
+          "filename": "buttons",
           "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/buttons/buttons.css",
           "localPath": "patterns/buttons/buttons.css"
         }
-      ]
+      ],
+      "js": []
     },
     {
       "name": "cards",
@@ -610,20 +735,15 @@ const patternManifest_1520353496545 = {
         {
           "name": "basic-card",
           "namePretty": "Basic card",
+          "filename": "basic-card",
           "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/cards/basic-card.html",
           "localPath": "patterns/cards/basic-card.html",
           "readme": {}
         },
         {
-          "name": "image-card",
-          "namePretty": "Image card",
-          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/cards/image-card.html",
-          "localPath": "patterns/cards/image-card.html",
-          "readme": {}
-        },
-        {
           "name": "product-info-card",
           "namePretty": "Product info card",
+          "filename": "product-info-card",
           "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/cards/product-info-card.html",
           "localPath": "patterns/cards/product-info-card.html",
           "readme": {}
@@ -633,6 +753,7 @@ const patternManifest_1520353496545 = {
         {
           "name": "readme",
           "namePretty": "Readme",
+          "filename": "README",
           "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/cards/README.md",
           "localPath": "patterns/cards/README.md"
         }
@@ -641,10 +762,60 @@ const patternManifest_1520353496545 = {
         {
           "name": "cards",
           "namePretty": "Cards",
+          "filename": "cards",
           "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/cards/cards.css",
           "localPath": "patterns/cards/cards.css"
         }
-      ]
+      ],
+      "js": []
+    },
+    {
+      "name": "footer",
+      "namePretty": "Footer",
+      "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/footer",
+      "html": [
+        {
+          "name": "footer-two",
+          "namePretty": "Footer two",
+          "filename": "footer-two",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/footer/footer-two.html",
+          "localPath": "patterns/footer/footer-two.html"
+        },
+        {
+          "name": "footer",
+          "namePretty": "Footer",
+          "filename": "footer",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/footer/footer.html",
+          "localPath": "patterns/footer/footer.html",
+          "readme": {}
+        }
+      ],
+      "md": [
+        {
+          "name": "readme",
+          "namePretty": "Readme",
+          "filename": "README",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/footer/README.md",
+          "localPath": "patterns/footer/README.md"
+        }
+      ],
+      "css": [
+        {
+          "name": "footer-two",
+          "namePretty": "Footer two",
+          "filename": "footer-two",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/footer/footer-two.css",
+          "localPath": "patterns/footer/footer-two.css"
+        },
+        {
+          "name": "footer",
+          "namePretty": "Footer",
+          "filename": "footer",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/footer/footer.css",
+          "localPath": "patterns/footer/footer.css"
+        }
+      ],
+      "js": []
     },
     {
       "name": "forms",
@@ -654,27 +825,44 @@ const patternManifest_1520353496545 = {
         {
           "name": "buttons-radio",
           "namePretty": "Buttons radio",
+          "filename": "buttons-radio",
           "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/forms/buttons-radio.html",
           "localPath": "patterns/forms/buttons-radio.html",
           "readme": {}
         },
         {
+          "name": "card-fields",
+          "namePretty": "Card fields",
+          "filename": "card-fields",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/forms/card-fields.html",
+          "localPath": "patterns/forms/card-fields.html"
+        },
+        {
           "name": "checkbox",
           "namePretty": "Checkbox",
+          "filename": "checkbox",
           "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/forms/checkbox.html",
           "localPath": "patterns/forms/checkbox.html",
           "readme": {}
         },
         {
-          "name": "dropdown-fields",
-          "namePretty": "Dropdown fields",
-          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/forms/dropdown-fields.html",
-          "localPath": "patterns/forms/dropdown-fields.html",
-          "readme": {}
+          "name": "date-fields",
+          "namePretty": "Date fields",
+          "filename": "date-fields",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/forms/date-fields.html",
+          "localPath": "patterns/forms/date-fields.html"
+        },
+        {
+          "name": "expire-fields",
+          "namePretty": "Expire fields",
+          "filename": "expire-fields",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/forms/expire-fields.html",
+          "localPath": "patterns/forms/expire-fields.html"
         },
         {
           "name": "input-fields",
           "namePretty": "Input fields",
+          "filename": "input-fields",
           "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/forms/input-fields.html",
           "localPath": "patterns/forms/input-fields.html",
           "readme": {}
@@ -682,6 +870,7 @@ const patternManifest_1520353496545 = {
         {
           "name": "textbox-fields",
           "namePretty": "Textbox fields",
+          "filename": "textbox-fields",
           "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/forms/textbox-fields.html",
           "localPath": "patterns/forms/textbox-fields.html",
           "readme": {}
@@ -691,6 +880,7 @@ const patternManifest_1520353496545 = {
         {
           "name": "readme",
           "namePretty": "Readme",
+          "filename": "README",
           "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/forms/README.md",
           "localPath": "patterns/forms/README.md"
         }
@@ -699,10 +889,46 @@ const patternManifest_1520353496545 = {
         {
           "name": "forms",
           "namePretty": "Forms",
+          "filename": "forms",
           "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/forms/forms.css",
           "localPath": "patterns/forms/forms.css"
         }
-      ]
+      ],
+      "js": []
+    },
+    {
+      "name": "header",
+      "namePretty": "Header",
+      "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/header",
+      "html": [
+        {
+          "name": "header",
+          "namePretty": "Header",
+          "filename": "header",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/header/header.html",
+          "localPath": "patterns/header/header.html",
+          "readme": {}
+        }
+      ],
+      "md": [
+        {
+          "name": "readme",
+          "namePretty": "Readme",
+          "filename": "README",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/header/README.md",
+          "localPath": "patterns/header/README.md"
+        }
+      ],
+      "css": [
+        {
+          "name": "header",
+          "namePretty": "Header",
+          "filename": "header",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/header/header.css",
+          "localPath": "patterns/header/header.css"
+        }
+      ],
+      "js": []
     },
     {
       "name": "navigations",
@@ -712,6 +938,7 @@ const patternManifest_1520353496545 = {
         {
           "name": "navigation-bar",
           "namePretty": "Navigation bar",
+          "filename": "navigation-bar",
           "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/navigations/navigation-bar.html",
           "localPath": "patterns/navigations/navigation-bar.html",
           "readme": {}
@@ -719,6 +946,7 @@ const patternManifest_1520353496545 = {
         {
           "name": "navigation-buttons",
           "namePretty": "Navigation buttons",
+          "filename": "navigation-buttons",
           "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/navigations/navigation-buttons.html",
           "localPath": "patterns/navigations/navigation-buttons.html",
           "readme": {}
@@ -726,15 +954,24 @@ const patternManifest_1520353496545 = {
         {
           "name": "pagination",
           "namePretty": "Pagination",
+          "filename": "pagination",
           "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/navigations/pagination.html",
           "localPath": "patterns/navigations/pagination.html",
           "readme": {}
+        },
+        {
+          "name": "sidebar",
+          "namePretty": "Sidebar",
+          "filename": "sidebar",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/navigations/sidebar.html",
+          "localPath": "patterns/navigations/sidebar.html"
         }
       ],
       "md": [
         {
           "name": "readme",
           "namePretty": "Readme",
+          "filename": "README",
           "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/navigations/README.md",
           "localPath": "patterns/navigations/README.md"
         }
@@ -743,10 +980,12 @@ const patternManifest_1520353496545 = {
         {
           "name": "navigations",
           "namePretty": "Navigations",
+          "filename": "navigations",
           "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/navigations/navigations.css",
           "localPath": "patterns/navigations/navigations.css"
         }
-      ]
+      ],
+      "js": []
     },
     {
       "name": "sections",
@@ -754,16 +993,27 @@ const patternManifest_1520353496545 = {
       "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/sections",
       "html": [
         {
-          "name": "sections",
-          "namePretty": "Sections",
-          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/sections/sections.html",
-          "localPath": "patterns/sections/sections.html"
+          "name": "image-section",
+          "namePretty": "Image section",
+          "filename": "image-section",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/sections/image-section.html",
+          "localPath": "patterns/sections/image-section.html",
+          "readme": {}
+        },
+        {
+          "name": "text-section",
+          "namePretty": "Text section",
+          "filename": "text-section",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/sections/text-section.html",
+          "localPath": "patterns/sections/text-section.html",
+          "readme": {}
         }
       ],
       "md": [
         {
           "name": "readme",
           "namePretty": "Readme",
+          "filename": "README",
           "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/sections/README.md",
           "localPath": "patterns/sections/README.md"
         }
@@ -772,10 +1022,12 @@ const patternManifest_1520353496545 = {
         {
           "name": "sections",
           "namePretty": "Sections",
+          "filename": "sections",
           "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/sections/sections.css",
           "localPath": "patterns/sections/sections.css"
         }
-      ]
+      ],
+      "js": []
     }
   ],
   "config": {
@@ -798,5 +1050,5 @@ const patternManifest_1520353496545 = {
   }
 };
 
-patternBotIncludes(patternManifest_1520353496545);
+patternBotIncludes(patternManifest_6af408d6c60d9f7f56214bddfa4f3b862caae359);
 }());

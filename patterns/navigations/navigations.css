@@ -96,6 +96,36 @@ header nav li a:hover {
 
 }
 
+/**SIDEBAR**/
+
+.categories {
+  text-decoration: underline;
+}
+
+.horizontal-line {
+  display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+.sidebar-content {
+  border: 1px solid #ccc;
+  border-top: 0px;
+}
+
+.shipping-content {
+  background-color: #fff;
+}
+
+textarea:focus,
+input:focus,
+select:focus {
+  outline: none;
+}
+
 @media only screen and (min-width: 25em) {
 
   header nav {
@@ -112,6 +142,14 @@ header nav li a:hover {
 
   .logo {
     text-align: left;
+  }
+
+}
+
+@media only screen and (min-width: 60em) {
+
+  .pagination {
+    float: right;
   }
 
 }

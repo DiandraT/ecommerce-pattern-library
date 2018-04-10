@@ -1,0 +1,54 @@
+.vertical-line {
+  display: none;
+}
+
+h4 {
+  padding-top: 1.5em;
+}
+
+footer {
+  text-align: center;
+}
+
+.icon,
+.shop-list a {
+  color: #000;
+}
+
+.item {
+  margin-top: .5em;
+}
+
+.icon:hover {
+  color: #466e64;
+  transition: .5s ease;
+}
+
+.shop-list a:hover {
+  outline: none;
+  border-bottom: 2px solid #2a423c;
+  padding-bottom: 1px;
+  color: #2a423c;
+
+  transition: .5s ease;
+}
+
+@media only screen and (min-width: 38em) {
+
+.vertical-line {
+    border-left: 2px solid #000;
+    height: 9em;
+    margin-top: 1em;
+    display: block;
+  }
+
+  h4 {
+    padding-top: 0em;
+  }
+
+  footer {
+    text-align: left;
+    background-color: #fff;
+  }
+
+}
