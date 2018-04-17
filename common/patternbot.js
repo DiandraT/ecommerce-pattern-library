@@ -443,10 +443,10 @@ const patternBotIncludes = function (manifest) {
 
 /** 
  * Patternbot library manifest
- * /Users/diandra/Desktop/ecommerce-pattern-library
- * @version 6af408d6c60d9f7f56214bddfa4f3b862caae359
+ * /Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra
+ * @version 41856f2bbd14420ad68a279a2862d4b84d6d2d42
  */
-const patternManifest_6af408d6c60d9f7f56214bddfa4f3b862caae359 = {
+const patternManifest_41856f2bbd14420ad68a279a2862d4b84d6d2d42 = {
   "commonInfo": {
     "modulifier": [
       "responsive",
@@ -614,49 +614,54 @@ const patternManifest_6af408d6c60d9f7f56214bddfa4f3b862caae359 = {
   },
   "patternLibFiles": {
     "commonParsable": {
-      "gridifier": "/Users/diandra/Desktop/ecommerce-pattern-library/common/grid.css",
-      "typografier": "/Users/diandra/Desktop/ecommerce-pattern-library/common/type.css",
-      "modulifier": "/Users/diandra/Desktop/ecommerce-pattern-library/common/modules.css",
-      "theme": "/Users/diandra/Desktop/ecommerce-pattern-library/common/theme.css"
+      "gridifier": "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/common/grid.css",
+      "typografier": "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/common/type.css",
+      "modulifier": "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/common/modules.css",
+      "theme": "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/common/theme.css"
     },
     "imagesParsable": {
-      "icons": "/Users/diandra/Desktop/ecommerce-pattern-library/images/icons.svg"
+      "icons": "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/images/icons.svg"
     },
     "logos": {
-      "sizeLarge": "/Users/diandra/Desktop/ecommerce-pattern-library/images/logo-256.svg",
-      "size64": "/Users/diandra/Desktop/ecommerce-pattern-library/images/logo-64.svg",
-      "size32": "/Users/diandra/Desktop/ecommerce-pattern-library/images/logo-32.svg",
-      "size16": "/Users/diandra/Desktop/ecommerce-pattern-library/images/logo-16.svg",
+      "sizeLarge": "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/images/logo-256.svg",
+      "size64": "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/images/logo-64.svg",
+      "size32": "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/images/logo-32.svg",
+      "size16": "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/images/logo-16.svg",
       "size16Local": "logo-16.svg",
       "sizeLargeLocal": "logo-256.svg",
       "size32Local": "logo-32.svg",
       "size64Local": "logo-64.svg"
     },
     "patterns": [
-      "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/banners",
-      "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/buttons",
-      "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/cards",
-      "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/footer",
-      "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/forms",
-      "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/header",
-      "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/navigations",
-      "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/sections"
+      "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/patterns/banners",
+      "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/patterns/buttons",
+      "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/patterns/cards",
+      "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/patterns/footer",
+      "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/patterns/forms",
+      "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/patterns/header",
+      "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/patterns/navigations",
+      "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/patterns/sections"
     ],
     "pages": [
       {
         "name": "checkout.html",
         "namePretty": "Checkout",
-        "path": "/Users/diandra/Desktop/ecommerce-pattern-library/pages/checkout.html"
+        "path": "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/pages/checkout.html"
       },
       {
         "name": "home.html",
         "namePretty": "Home",
-        "path": "/Users/diandra/Desktop/ecommerce-pattern-library/pages/home.html"
+        "path": "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/pages/home.html"
+      },
+      {
+        "name": "product-details.html",
+        "namePretty": "Product details",
+        "path": "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/pages/product-details.html"
       },
       {
         "name": "product-list.html",
         "namePretty": "Product list",
-        "path": "/Users/diandra/Desktop/ecommerce-pattern-library/pages/product-list.html"
+        "path": "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/pages/product-list.html"
       }
     ],
     "js": []
@@ -665,20 +670,20 @@ const patternManifest_6af408d6c60d9f7f56214bddfa4f3b862caae359 = {
     {
       "name": "banners",
       "namePretty": "Banners",
-      "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/banners",
+      "path": "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/patterns/banners",
       "html": [
         {
           "name": "call-to-action-banner",
           "namePretty": "Call to action banner",
           "filename": "call-to-action-banner",
-          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/banners/call-to-action-banner.html",
+          "path": "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/patterns/banners/call-to-action-banner.html",
           "localPath": "patterns/banners/call-to-action-banner.html"
         },
         {
           "name": "top-banner",
           "namePretty": "Top banner",
           "filename": "top-banner",
-          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/banners/top-banner.html",
+          "path": "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/patterns/banners/top-banner.html",
           "localPath": "patterns/banners/top-banner.html"
         }
       ],
@@ -688,7 +693,7 @@ const patternManifest_6af408d6c60d9f7f56214bddfa4f3b862caae359 = {
           "name": "banners",
           "namePretty": "Banners",
           "filename": "banners",
-          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/banners/banners.css",
+          "path": "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/patterns/banners/banners.css",
           "localPath": "patterns/banners/banners.css"
         }
       ],
@@ -697,13 +702,13 @@ const patternManifest_6af408d6c60d9f7f56214bddfa4f3b862caae359 = {
     {
       "name": "buttons",
       "namePretty": "Buttons",
-      "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/buttons",
+      "path": "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/patterns/buttons",
       "html": [
         {
           "name": "buttons",
           "namePretty": "Buttons",
           "filename": "buttons",
-          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/buttons/buttons.html",
+          "path": "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/patterns/buttons/buttons.html",
           "localPath": "patterns/buttons/buttons.html"
         }
       ],
@@ -712,7 +717,7 @@ const patternManifest_6af408d6c60d9f7f56214bddfa4f3b862caae359 = {
           "name": "readme",
           "namePretty": "Readme",
           "filename": "README",
-          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/buttons/README.md",
+          "path": "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/patterns/buttons/README.md",
           "localPath": "patterns/buttons/README.md"
         }
       ],
@@ -721,7 +726,7 @@ const patternManifest_6af408d6c60d9f7f56214bddfa4f3b862caae359 = {
           "name": "buttons",
           "namePretty": "Buttons",
           "filename": "buttons",
-          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/buttons/buttons.css",
+          "path": "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/patterns/buttons/buttons.css",
           "localPath": "patterns/buttons/buttons.css"
         }
       ],
@@ -730,13 +735,13 @@ const patternManifest_6af408d6c60d9f7f56214bddfa4f3b862caae359 = {
     {
       "name": "cards",
       "namePretty": "Cards",
-      "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/cards",
+      "path": "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/patterns/cards",
       "html": [
         {
           "name": "basic-card",
           "namePretty": "Basic card",
           "filename": "basic-card",
-          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/cards/basic-card.html",
+          "path": "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/patterns/cards/basic-card.html",
           "localPath": "patterns/cards/basic-card.html",
           "readme": {}
         },
@@ -744,7 +749,7 @@ const patternManifest_6af408d6c60d9f7f56214bddfa4f3b862caae359 = {
           "name": "product-info-card",
           "namePretty": "Product info card",
           "filename": "product-info-card",
-          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/cards/product-info-card.html",
+          "path": "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/patterns/cards/product-info-card.html",
           "localPath": "patterns/cards/product-info-card.html",
           "readme": {}
         }
@@ -754,7 +759,7 @@ const patternManifest_6af408d6c60d9f7f56214bddfa4f3b862caae359 = {
           "name": "readme",
           "namePretty": "Readme",
           "filename": "README",
-          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/cards/README.md",
+          "path": "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/patterns/cards/README.md",
           "localPath": "patterns/cards/README.md"
         }
       ],
@@ -763,7 +768,7 @@ const patternManifest_6af408d6c60d9f7f56214bddfa4f3b862caae359 = {
           "name": "cards",
           "namePretty": "Cards",
           "filename": "cards",
-          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/cards/cards.css",
+          "path": "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/patterns/cards/cards.css",
           "localPath": "patterns/cards/cards.css"
         }
       ],
@@ -772,20 +777,20 @@ const patternManifest_6af408d6c60d9f7f56214bddfa4f3b862caae359 = {
     {
       "name": "footer",
       "namePretty": "Footer",
-      "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/footer",
+      "path": "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/patterns/footer",
       "html": [
         {
           "name": "footer-two",
           "namePretty": "Footer two",
           "filename": "footer-two",
-          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/footer/footer-two.html",
+          "path": "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/patterns/footer/footer-two.html",
           "localPath": "patterns/footer/footer-two.html"
         },
         {
           "name": "footer",
           "namePretty": "Footer",
           "filename": "footer",
-          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/footer/footer.html",
+          "path": "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/patterns/footer/footer.html",
           "localPath": "patterns/footer/footer.html",
           "readme": {}
         }
@@ -795,7 +800,7 @@ const patternManifest_6af408d6c60d9f7f56214bddfa4f3b862caae359 = {
           "name": "readme",
           "namePretty": "Readme",
           "filename": "README",
-          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/footer/README.md",
+          "path": "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/patterns/footer/README.md",
           "localPath": "patterns/footer/README.md"
         }
       ],
@@ -804,14 +809,14 @@ const patternManifest_6af408d6c60d9f7f56214bddfa4f3b862caae359 = {
           "name": "footer-two",
           "namePretty": "Footer two",
           "filename": "footer-two",
-          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/footer/footer-two.css",
+          "path": "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/patterns/footer/footer-two.css",
           "localPath": "patterns/footer/footer-two.css"
         },
         {
           "name": "footer",
           "namePretty": "Footer",
           "filename": "footer",
-          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/footer/footer.css",
+          "path": "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/patterns/footer/footer.css",
           "localPath": "patterns/footer/footer.css"
         }
       ],
@@ -820,13 +825,13 @@ const patternManifest_6af408d6c60d9f7f56214bddfa4f3b862caae359 = {
     {
       "name": "forms",
       "namePretty": "Forms",
-      "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/forms",
+      "path": "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/patterns/forms",
       "html": [
         {
           "name": "buttons-radio",
           "namePretty": "Buttons radio",
           "filename": "buttons-radio",
-          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/forms/buttons-radio.html",
+          "path": "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/patterns/forms/buttons-radio.html",
           "localPath": "patterns/forms/buttons-radio.html",
           "readme": {}
         },
@@ -834,14 +839,14 @@ const patternManifest_6af408d6c60d9f7f56214bddfa4f3b862caae359 = {
           "name": "card-fields",
           "namePretty": "Card fields",
           "filename": "card-fields",
-          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/forms/card-fields.html",
+          "path": "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/patterns/forms/card-fields.html",
           "localPath": "patterns/forms/card-fields.html"
         },
         {
           "name": "checkbox",
           "namePretty": "Checkbox",
           "filename": "checkbox",
-          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/forms/checkbox.html",
+          "path": "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/patterns/forms/checkbox.html",
           "localPath": "patterns/forms/checkbox.html",
           "readme": {}
         },
@@ -849,21 +854,21 @@ const patternManifest_6af408d6c60d9f7f56214bddfa4f3b862caae359 = {
           "name": "date-fields",
           "namePretty": "Date fields",
           "filename": "date-fields",
-          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/forms/date-fields.html",
+          "path": "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/patterns/forms/date-fields.html",
           "localPath": "patterns/forms/date-fields.html"
         },
         {
           "name": "expire-fields",
           "namePretty": "Expire fields",
           "filename": "expire-fields",
-          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/forms/expire-fields.html",
+          "path": "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/patterns/forms/expire-fields.html",
           "localPath": "patterns/forms/expire-fields.html"
         },
         {
           "name": "input-fields",
           "namePretty": "Input fields",
           "filename": "input-fields",
-          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/forms/input-fields.html",
+          "path": "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/patterns/forms/input-fields.html",
           "localPath": "patterns/forms/input-fields.html",
           "readme": {}
         },
@@ -871,7 +876,7 @@ const patternManifest_6af408d6c60d9f7f56214bddfa4f3b862caae359 = {
           "name": "textbox-fields",
           "namePretty": "Textbox fields",
           "filename": "textbox-fields",
-          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/forms/textbox-fields.html",
+          "path": "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/patterns/forms/textbox-fields.html",
           "localPath": "patterns/forms/textbox-fields.html",
           "readme": {}
         }
@@ -881,7 +886,7 @@ const patternManifest_6af408d6c60d9f7f56214bddfa4f3b862caae359 = {
           "name": "readme",
           "namePretty": "Readme",
           "filename": "README",
-          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/forms/README.md",
+          "path": "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/patterns/forms/README.md",
           "localPath": "patterns/forms/README.md"
         }
       ],
@@ -890,7 +895,7 @@ const patternManifest_6af408d6c60d9f7f56214bddfa4f3b862caae359 = {
           "name": "forms",
           "namePretty": "Forms",
           "filename": "forms",
-          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/forms/forms.css",
+          "path": "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/patterns/forms/forms.css",
           "localPath": "patterns/forms/forms.css"
         }
       ],
@@ -899,13 +904,13 @@ const patternManifest_6af408d6c60d9f7f56214bddfa4f3b862caae359 = {
     {
       "name": "header",
       "namePretty": "Header",
-      "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/header",
+      "path": "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/patterns/header",
       "html": [
         {
           "name": "header",
           "namePretty": "Header",
           "filename": "header",
-          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/header/header.html",
+          "path": "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/patterns/header/header.html",
           "localPath": "patterns/header/header.html",
           "readme": {}
         }
@@ -915,7 +920,7 @@ const patternManifest_6af408d6c60d9f7f56214bddfa4f3b862caae359 = {
           "name": "readme",
           "namePretty": "Readme",
           "filename": "README",
-          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/header/README.md",
+          "path": "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/patterns/header/README.md",
           "localPath": "patterns/header/README.md"
         }
       ],
@@ -924,7 +929,7 @@ const patternManifest_6af408d6c60d9f7f56214bddfa4f3b862caae359 = {
           "name": "header",
           "namePretty": "Header",
           "filename": "header",
-          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/header/header.css",
+          "path": "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/patterns/header/header.css",
           "localPath": "patterns/header/header.css"
         }
       ],
@@ -933,13 +938,13 @@ const patternManifest_6af408d6c60d9f7f56214bddfa4f3b862caae359 = {
     {
       "name": "navigations",
       "namePretty": "Navigations",
-      "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/navigations",
+      "path": "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/patterns/navigations",
       "html": [
         {
           "name": "navigation-bar",
           "namePretty": "Navigation bar",
           "filename": "navigation-bar",
-          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/navigations/navigation-bar.html",
+          "path": "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/patterns/navigations/navigation-bar.html",
           "localPath": "patterns/navigations/navigation-bar.html",
           "readme": {}
         },
@@ -947,7 +952,7 @@ const patternManifest_6af408d6c60d9f7f56214bddfa4f3b862caae359 = {
           "name": "navigation-buttons",
           "namePretty": "Navigation buttons",
           "filename": "navigation-buttons",
-          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/navigations/navigation-buttons.html",
+          "path": "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/patterns/navigations/navigation-buttons.html",
           "localPath": "patterns/navigations/navigation-buttons.html",
           "readme": {}
         },
@@ -955,7 +960,7 @@ const patternManifest_6af408d6c60d9f7f56214bddfa4f3b862caae359 = {
           "name": "pagination",
           "namePretty": "Pagination",
           "filename": "pagination",
-          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/navigations/pagination.html",
+          "path": "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/patterns/navigations/pagination.html",
           "localPath": "patterns/navigations/pagination.html",
           "readme": {}
         },
@@ -963,7 +968,7 @@ const patternManifest_6af408d6c60d9f7f56214bddfa4f3b862caae359 = {
           "name": "sidebar",
           "namePretty": "Sidebar",
           "filename": "sidebar",
-          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/navigations/sidebar.html",
+          "path": "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/patterns/navigations/sidebar.html",
           "localPath": "patterns/navigations/sidebar.html"
         }
       ],
@@ -972,7 +977,7 @@ const patternManifest_6af408d6c60d9f7f56214bddfa4f3b862caae359 = {
           "name": "readme",
           "namePretty": "Readme",
           "filename": "README",
-          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/navigations/README.md",
+          "path": "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/patterns/navigations/README.md",
           "localPath": "patterns/navigations/README.md"
         }
       ],
@@ -981,7 +986,7 @@ const patternManifest_6af408d6c60d9f7f56214bddfa4f3b862caae359 = {
           "name": "navigations",
           "namePretty": "Navigations",
           "filename": "navigations",
-          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/navigations/navigations.css",
+          "path": "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/patterns/navigations/navigations.css",
           "localPath": "patterns/navigations/navigations.css"
         }
       ],
@@ -990,13 +995,13 @@ const patternManifest_6af408d6c60d9f7f56214bddfa4f3b862caae359 = {
     {
       "name": "sections",
       "namePretty": "Sections",
-      "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/sections",
+      "path": "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/patterns/sections",
       "html": [
         {
           "name": "image-section",
           "namePretty": "Image section",
           "filename": "image-section",
-          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/sections/image-section.html",
+          "path": "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/patterns/sections/image-section.html",
           "localPath": "patterns/sections/image-section.html",
           "readme": {}
         },
@@ -1004,7 +1009,7 @@ const patternManifest_6af408d6c60d9f7f56214bddfa4f3b862caae359 = {
           "name": "text-section",
           "namePretty": "Text section",
           "filename": "text-section",
-          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/sections/text-section.html",
+          "path": "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/patterns/sections/text-section.html",
           "localPath": "patterns/sections/text-section.html",
           "readme": {}
         }
@@ -1014,7 +1019,7 @@ const patternManifest_6af408d6c60d9f7f56214bddfa4f3b862caae359 = {
           "name": "readme",
           "namePretty": "Readme",
           "filename": "README",
-          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/sections/README.md",
+          "path": "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/patterns/sections/README.md",
           "localPath": "patterns/sections/README.md"
         }
       ],
@@ -1023,7 +1028,7 @@ const patternManifest_6af408d6c60d9f7f56214bddfa4f3b862caae359 = {
           "name": "sections",
           "namePretty": "Sections",
           "filename": "sections",
-          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/sections/sections.css",
+          "path": "/Users/tandrews/Desktop/My Art/Semester 4 Graphic Design/WEB-4/ecommerce-pattern-library-diandra/patterns/sections/sections.css",
           "localPath": "patterns/sections/sections.css"
         }
       ],
@@ -1050,5 +1055,5 @@ const patternManifest_6af408d6c60d9f7f56214bddfa4f3b862caae359 = {
   }
 };
 
-patternBotIncludes(patternManifest_6af408d6c60d9f7f56214bddfa4f3b862caae359);
+patternBotIncludes(patternManifest_41856f2bbd14420ad68a279a2862d4b84d6d2d42);
 }());
