@@ -444,9 +444,9 @@ const patternBotIncludes = function (manifest) {
 /** 
  * Patternbot library manifest
  * /Users/diandra/Desktop/ecommerce-pattern-library
- * @version 6af408d6c60d9f7f56214bddfa4f3b862caae359
+ * @version 16661b03a938e0f7def543640f1b2d1b8f43c002
  */
-const patternManifest_6af408d6c60d9f7f56214bddfa4f3b862caae359 = {
+const patternManifest_16661b03a938e0f7def543640f1b2d1b8f43c002 = {
   "commonInfo": {
     "modulifier": [
       "responsive",
@@ -668,18 +668,25 @@ const patternManifest_6af408d6c60d9f7f56214bddfa4f3b862caae359 = {
       "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/banners",
       "html": [
         {
+          "name": "banner-alternate-two",
+          "namePretty": "Banner alternate two",
+          "filename": "banner-alternate-two",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/banners/banner-alternate-two.html",
+          "localPath": "patterns/banners/banner-alternate-two.html"
+        },
+        {
+          "name": "banner-alternate",
+          "namePretty": "Banner alternate",
+          "filename": "banner-alternate",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/banners/banner-alternate.html",
+          "localPath": "patterns/banners/banner-alternate.html"
+        },
+        {
           "name": "call-to-action-banner",
           "namePretty": "Call to action banner",
           "filename": "call-to-action-banner",
           "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/banners/call-to-action-banner.html",
           "localPath": "patterns/banners/call-to-action-banner.html"
-        },
-        {
-          "name": "top-banner",
-          "namePretty": "Top banner",
-          "filename": "top-banner",
-          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/banners/top-banner.html",
-          "localPath": "patterns/banners/top-banner.html"
         }
       ],
       "md": [],
@@ -831,11 +838,11 @@ const patternManifest_6af408d6c60d9f7f56214bddfa4f3b862caae359 = {
           "readme": {}
         },
         {
-          "name": "card-fields",
-          "namePretty": "Card fields",
-          "filename": "card-fields",
-          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/forms/card-fields.html",
-          "localPath": "patterns/forms/card-fields.html"
+          "name": "card-field",
+          "namePretty": "Card field",
+          "filename": "card-field",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/forms/card-field.html",
+          "localPath": "patterns/forms/card-field.html"
         },
         {
           "name": "checkbox",
@@ -846,26 +853,25 @@ const patternManifest_6af408d6c60d9f7f56214bddfa4f3b862caae359 = {
           "readme": {}
         },
         {
-          "name": "date-fields",
-          "namePretty": "Date fields",
-          "filename": "date-fields",
-          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/forms/date-fields.html",
-          "localPath": "patterns/forms/date-fields.html"
+          "name": "input-field",
+          "namePretty": "Input field",
+          "filename": "input-field",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/forms/input-field.html",
+          "localPath": "patterns/forms/input-field.html"
         },
         {
-          "name": "expire-fields",
-          "namePretty": "Expire fields",
-          "filename": "expire-fields",
-          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/forms/expire-fields.html",
-          "localPath": "patterns/forms/expire-fields.html"
+          "name": "regular-field",
+          "namePretty": "Regular field",
+          "filename": "regular-field",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/forms/regular-field.html",
+          "localPath": "patterns/forms/regular-field.html"
         },
         {
-          "name": "input-fields",
-          "namePretty": "Input fields",
-          "filename": "input-fields",
-          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/forms/input-fields.html",
-          "localPath": "patterns/forms/input-fields.html",
-          "readme": {}
+          "name": "shipping-field",
+          "namePretty": "Shipping field",
+          "filename": "shipping-field",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/forms/shipping-field.html",
+          "localPath": "patterns/forms/shipping-field.html"
         },
         {
           "name": "textbox-fields",
@@ -1050,5 +1056,5 @@ const patternManifest_6af408d6c60d9f7f56214bddfa4f3b862caae359 = {
   }
 };
 
-patternBotIncludes(patternManifest_6af408d6c60d9f7f56214bddfa4f3b862caae359);
+patternBotIncludes(patternManifest_16661b03a938e0f7def543640f1b2d1b8f43c002);
 }());

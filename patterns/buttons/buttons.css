@@ -6,11 +6,11 @@
 
   color: #fff;
 
-  transition: background-color .30s;
+  transition: .30s;
 }
 
 .btn:hover {
-  background-color: #182623;
+  background-color: #fff;
 }
 
 .btn-light {

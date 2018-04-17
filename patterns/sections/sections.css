@@ -5,18 +5,26 @@ img {
 
 section {
   margin: 0 auto;
-  background-color: #d3d3d3;
+  background-color: var(--color-accent-light);
+  color: var(--color-primary);
   position: relative;
   padding: 10px;
 }
 
+.content,
+.read-more a {
+  color: #fff;
+}
+
+.image-section {
+  color: var(--color-accent-light);
+}
+
 .alternate2 {
-  height: 200px;
   width: 100%;
   margin: 0 auto;
   background-color: #466e64;
   position: relative;
-  padding: 10px;
 }
 
 .content2 {
