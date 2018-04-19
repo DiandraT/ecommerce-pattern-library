@@ -1,6 +1,5 @@
 header nav li {
   display: inline;
-  width: 100%;
   padding: 1.5em;
 }
 
@@ -36,7 +35,6 @@ header nav li a:hover {
   color: #000;
   background-color: #fff;
   display: inline-block;
-  border: 0px;
   float: left;
   padding: 8px 16px;
   text-decoration: none;
@@ -92,11 +90,7 @@ header nav li a:hover {
   display: none;
 }
 
-.button:hover {
-
-}
-
-/**SIDEBAR**/
+/** SIDEBAR **/
 
 .categories {
   text-decoration: underline;
@@ -104,16 +98,15 @@ header nav li a:hover {
 
 .horizontal-line {
   display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
 }
 
 .sidebar-content {
   border: 1px solid #ccc;
-  border-top: 0px;
 }
 
 .shipping-content {

@@ -1,5 +1,0 @@
-inherit:
-  - css
-
-naming: true
-restrictFileTypes: true

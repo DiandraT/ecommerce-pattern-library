@@ -22,3 +22,7 @@ form {
 input {
   color: #000;
 }
+
+h2:hover {
+  color: #000;
+}
