@@ -444,9 +444,9 @@ const patternBotIncludes = function (manifest) {
 /** 
  * Patternbot library manifest
  * /Users/diandra/Desktop/ecommerce-pattern-library
- * @version 16661b03a938e0f7def543640f1b2d1b8f43c002
+ * @version e40e73a25121316b37e81bbd08c3ac249bef2269
  */
-const patternManifest_16661b03a938e0f7def543640f1b2d1b8f43c002 = {
+const patternManifest_e40e73a25121316b37e81bbd08c3ac249bef2269 = {
   "commonInfo": {
     "modulifier": [
       "responsive",
@@ -672,24 +672,35 @@ const patternManifest_16661b03a938e0f7def543640f1b2d1b8f43c002 = {
           "namePretty": "Banner alternate two",
           "filename": "banner-alternate-two",
           "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/banners/banner-alternate-two.html",
-          "localPath": "patterns/banners/banner-alternate-two.html"
+          "localPath": "patterns/banners/banner-alternate-two.html",
+          "readme": {}
         },
         {
           "name": "banner-alternate",
           "namePretty": "Banner alternate",
           "filename": "banner-alternate",
           "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/banners/banner-alternate.html",
-          "localPath": "patterns/banners/banner-alternate.html"
+          "localPath": "patterns/banners/banner-alternate.html",
+          "readme": {}
         },
         {
           "name": "call-to-action-banner",
           "namePretty": "Call to action banner",
           "filename": "call-to-action-banner",
           "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/banners/call-to-action-banner.html",
-          "localPath": "patterns/banners/call-to-action-banner.html"
+          "localPath": "patterns/banners/call-to-action-banner.html",
+          "readme": {}
         }
       ],
-      "md": [],
+      "md": [
+        {
+          "name": "readme",
+          "namePretty": "Readme",
+          "filename": "README",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/banners/README.md",
+          "localPath": "patterns/banners/README.md"
+        }
+      ],
       "css": [
         {
           "name": "banners",
@@ -1056,5 +1067,5 @@ const patternManifest_16661b03a938e0f7def543640f1b2d1b8f43c002 = {
   }
 };
 
-patternBotIncludes(patternManifest_16661b03a938e0f7def543640f1b2d1b8f43c002);
+patternBotIncludes(patternManifest_e40e73a25121316b37e81bbd08c3ac249bef2269);
 }());
