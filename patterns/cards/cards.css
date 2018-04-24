@@ -1,8 +1,13 @@
 /** BASIC CARDS **/
 
-.card {
+.icon-card {
   background-color: #fff;
   color: #fff;
+  border: 3px solid #000;
+}
+
+.icon-card:hover {
+  color: var(--color-accent-light);
 }
 
 .icon {
