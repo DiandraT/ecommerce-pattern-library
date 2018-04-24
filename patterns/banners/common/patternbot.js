@@ -443,15 +443,17 @@ const patternBotIncludes = function (manifest) {
 
 /** 
  * Patternbot library manifest
- * /Users/diandra/Desktop/ecommerce-pattern-library/patterns/footer
- * @version 54ab43afd87015341d9b0c42b3daf918f1152943
+ * /Users/diandra/Desktop/ecommerce-pattern-library/patterns/banners
+ * @version 1d2c76324c284f0cecee6070556720463267cd5a
  */
-const patternManifest_54ab43afd87015341d9b0c42b3daf918f1152943 = {
+const patternManifest_1d2c76324c284f0cecee6070556720463267cd5a = {
   "commonInfo": {
     "theme": [],
     "readme": {
       "attributes": {
-        "footer": "This is the primary footer that will be seen on each page of the website.\n",
+        "call-to-action-banner": "This banner will be used only on its homepage. Linking a button that goes to another page.\n",
+        "banner-alternate": "This banner will be used on other pages throughout the website.\n",
+        "banner-alternate-two": "This banner will be used on other pages throughout the website.\n",
         "backgroundColour": "#fff"
       },
       "bodyRaw": "",
@@ -503,5 +505,5 @@ const patternManifest_54ab43afd87015341d9b0c42b3daf918f1152943 = {
   }
 };
 
-patternBotIncludes(patternManifest_54ab43afd87015341d9b0c42b3daf918f1152943);
+patternBotIncludes(patternManifest_1d2c76324c284f0cecee6070556720463267cd5a);
 }());

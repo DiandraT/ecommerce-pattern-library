@@ -1,6 +1,6 @@
 input,
 select {
-  border-radius: .15em;
+  border-radius: .25em;
   border: 2px solid;
   border-color: var(--color-accent);
   outline: none;
@@ -11,36 +11,18 @@ input[type="checkbox"] + label::before {
   border-color: var(--color-accent);
 }
 
-input[type="radio"] + label::before {
-  border-color: var(--color-accent);
-}
-
 textarea {
   border-color: var(--color-accent);
 }
 
-input, select {
-  border: none;
-  appearance: none;
-  outline: none;
-  border-bottom: 1.5px solid #000;
+form {
+  color: #000;
 }
 
-select {
-  border: none;
-  width: 30%;
-  float: right;
+input {
+  color: #000;
 }
 
-/*ERROR MESSAGE*/
-
-input:invalid,
-input[type="checkbox"]:invalid + label::before {
-  border-color: f33;
-}
-
-.error-message {
-  display: none;
-  background-color: #fee;
-  color: #c33
+h2:hover {
+  color: #000;
 }

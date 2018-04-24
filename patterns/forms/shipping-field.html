@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-ca">
+<head>
+  <meta charset="utf-8">
+  <title>Shipping Field</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link href="../../common/modules.css" rel="stylesheet">
+  <link href="../../common/grid.css" rel="stylesheet">
+  <link href="../../common/type.css" rel="stylesheet">
+  <link href="../../common/theme.css" rel="stylesheet">
+  <link href="forms.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Heebo:400,700" rel="stylesheet">
+</head>
+<body>
+
+  <form class="form push-0" action="index.html" method="POST">
+    <div class="pad-t">
+      <div class="address">
+        <h1 class="normal tera giga push">Shipping Address</h1>
+
+        <div class="grid">
+
+          <div class="unit xs-1 s-1 m-1-2 l-1-2 xl-1-2 push push-r-1-2">
+            <input type="text" id="first-name" name="first-name" placeholder="First Name" required>
+          </div>
+
+          <div class="unit xs-1 s-1 m-1-2 l-1-2 xl-1-2 push">
+            <input type="text" id="last-name" name="last-name" placeholder="Last Name" required>
+          </div>
+
+          <div class="unit xs-1 s-1 m-1 l-1 xl-1 push">
+            <input type="text" id="address-one" name="address-one" placeholder="Street Address 1" required>
+          </div>
+
+          <div class="unit xs-1 s-1 m-1 l-1 xl-1 push">
+            <input type="text" id="address-two" name="address-two" placeholder="Street Address 2" required>
+          </div>
+
+          <div class="unit xs-1 s-1 m-1 l-1 xl-1 push">
+            <select id="country" name="country">
+              <option>Canada</option>
+              <option>Australia</option>
+              <option>United States of America</option>
+              <option>United Kingdom</option>
+            </select>
+          </div>
+
+          <div class="unit xs-1 s-1 m-1-3 l-1-4 xl-1-4 push push-r-1-2">
+            <input type="text" id="city" name="city" placeholder="City" required>
+          </div>
+
+          <div class="unit xs-1 s-1 m-1-3 l-1-4 xl-1-4 push push-r-1-2">
+            <select id="province" name="province">
+              <option>Alberta</option>
+              <option>British Columbia</option>
+              <option>Manitoba</option>
+              <option>New Brunswick</option>
+              <option>Newfoundland & Labrador</option>
+              <option>Northwest Territories</option>
+              <option>Nunavut</option>
+              <option>Ontario</option>
+              <option>Prince Edward Island</option>
+              <option>Québec</option>
+              <option>Saskatchewan</option>
+              <option>Yukon</option>
+            </select>
+          </div>
+
+          <div class="unit xs-1 s-1 m-1-3 l-1-4 xl-1-4 push-1-2">
+            <input type="text" id="postal" name="postal" placeholder="Zip/Postal" required>
+          </div>
+
+          <div class="unit xs-1 s-1 m-1-3 l-1 xl-1 pad-t-1-2">
+            <input type="text" id="phone" name="phone" placeholder="Phone Number" required>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </form>
+
+</body>
+</html>
