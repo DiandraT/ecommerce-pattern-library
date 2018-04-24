@@ -2,36 +2,36 @@
 
 .icon-card {
   background-color: #fff;
-  color: #fff;
-  border: 3px solid #000;
 }
 
 .icon-card:hover {
-  color: var(--color-accent-light);
-}
-
-.icon {
-  color: #000;
+  cursor: pointer;
+  transition: ease .3s;
+  border: 2px solid var(--color-accent);
 }
 
 h2 {
-  color: #000;
+  color: var(--color-primary);
 }
 
-h2:hover {
-  color: var(--color-accent-light);
-  transition: ease .3s;
-}
-
-/** PRODUCT INFO CARDS **/
+/** IMAGE CARD **/
 
 .image-card {
   text-decoration: none;
   list-style-type: none;
 }
 
+.image-card-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/** PRODUCT INFO CARDS **/
+
 a {
   text-decoration: none;
   list-style-type: none;
-  color: #000;
+  color: var(--color-primary);
 }

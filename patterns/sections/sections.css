@@ -5,7 +5,7 @@ img {
 
 section {
   margin: 0 auto;
-  background-color: var(--color-accent-light);
+  background-color: var(--color-accent);
   color: var(--color-primary);
   position: relative;
   padding: 10px;
@@ -20,13 +20,25 @@ section {
   color: var(--color-accent-light);
 }
 
-.alternate2 {
+.alternate-two {
   width: 100%;
   margin: 0 auto;
-  background-color: #466e64;
+  background-color: var(--color-accent);
   position: relative;
 }
 
-.content2 {
+.content-two {
   color: #fff;
+}
+
+.alternate-three {
+  width: 100%;
+  margin: 0 auto;
+  background-color: var(--color-section);
+  position: relative;
+
+}
+
+.content-three {
+  color: var(--color-primary);
 }

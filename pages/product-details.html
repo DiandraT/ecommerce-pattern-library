@@ -8,9 +8,15 @@
 </head>
 <body>
 
-  <script type="application/json" data-pattern="header/header"></script>
+  <div class="push-2">
+    <script type="application/json" data-pattern="header/header">
+      {
+        ".current[class]": "gutter-1-2"
+      }
+    </script>
+  </div>
 
-  <div class="grid push">
+  <div class="grid push-2">
     <div class="unit xs-1 s-1 m-1-2 l-2-3 xl-2-3 gutter-2">
       <img src="../../images/icon-image-one.jpg" alt="">
     </div>
@@ -23,13 +29,17 @@
       <div>
         <a class="btn" href="#">Add to cart</a>
       </div>
-
     </div>
 
-  </div>
-  <div class="pad-t">
-    <script type="application/json" data-pattern="footer/footer-two"></script>
-  </div>
+    </div>
+    <script type="application/json" data-pattern="sections/text-section">
+      {
+        "h1": "hello"
+      }
+    </script>
+    <div class="pad-t">
+      <script type="application/json" data-pattern="footer/footer"></script>
+    </div>
 
 </body>
 </html>

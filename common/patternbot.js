@@ -444,9 +444,9 @@ const patternBotIncludes = function (manifest) {
 /** 
  * Patternbot library manifest
  * /Users/diandra/Desktop/ecommerce-pattern-library
- * @version 11a94db38b7b335885bf1a48725ebc780ad20adb
+ * @version abfef11300d7e5825abfb6a4bbead420b1776553
  */
-const patternManifest_11a94db38b7b335885bf1a48725ebc780ad20adb = {
+const patternManifest_abfef11300d7e5825abfb6a4bbead420b1776553 = {
   "commonInfo": {
     "modulifier": [
       "responsive",
@@ -764,6 +764,14 @@ const patternManifest_11a94db38b7b335885bf1a48725ebc780ad20adb = {
           "readme": {}
         },
         {
+          "name": "image-card",
+          "namePretty": "Image card",
+          "filename": "image-card",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/cards/image-card.html",
+          "localPath": "patterns/cards/image-card.html",
+          "readme": {}
+        },
+        {
           "name": "product-info-card",
           "namePretty": "Product info card",
           "filename": "product-info-card",
@@ -993,6 +1001,14 @@ const patternManifest_11a94db38b7b335885bf1a48725ebc780ad20adb = {
           "readme": {}
         },
         {
+          "name": "text-section-alternate",
+          "namePretty": "Text section alternate",
+          "filename": "text-section-alternate",
+          "path": "/Users/diandra/Desktop/ecommerce-pattern-library/patterns/sections/text-section-alternate.html",
+          "localPath": "patterns/sections/text-section-alternate.html",
+          "readme": {}
+        },
+        {
           "name": "text-section",
           "namePretty": "Text section",
           "filename": "text-section",
@@ -1042,5 +1058,5 @@ const patternManifest_11a94db38b7b335885bf1a48725ebc780ad20adb = {
   }
 };
 
-patternBotIncludes(patternManifest_11a94db38b7b335885bf1a48725ebc780ad20adb);
+patternBotIncludes(patternManifest_abfef11300d7e5825abfb6a4bbead420b1776553);
 }());

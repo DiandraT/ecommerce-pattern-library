@@ -6,4 +6,7 @@ basic-card: |
 product-info-card: |
   This card is used for information on a certain product being sold.
 
+image-card: |
+  This card is used for brief information, but will not be linked to another page.
+
 ---
